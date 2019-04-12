@@ -11,7 +11,7 @@ export class ProgressComponent implements OnInit {
   @Input() frontBg:String; 
   @Input() backBg:String; 
   @Input() value:Number; 
-  @Input() type:String='area'; 
+  @Input() type:String; 
 
   constructor() { }
 

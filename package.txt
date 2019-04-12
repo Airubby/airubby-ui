@@ -34,7 +34,8 @@ export * from './src/app/testmodel/testmodel.module';
 	"packagr": "ng-packagr -p ng-package.json"     //新添加的
 },
 "private": false,                       //修改为false
-9、删除package.json文件中dependencies对象
+9、测试打包
+本地引入模块测试，测试通过后需要打包的时候删除package.json文件中dependencies对象
 10、执行打包
 npm run packagr
 11、发布npm包
