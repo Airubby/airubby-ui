@@ -1,0 +1,48 @@
+1、新建工程
+ng new testpackage
+2、新建模块 testmodel 为自己的模块名称
+ng g m testmodel
+3、在模块里创建组件 testcomponent为自己的组件名称，自己可以制作多个组件
+ng g c testmodel/testcomponent
+4、在testmodel.module.ts里面添加exports内容
+@NgModule({
+  declarations: [TestcomponentComponent],
+  imports: [
+    CommonModule
+  ],
+  exports: [TestcomponentComponent] //添加的
+})
+5、安装ng-packagr
+npm i ng-packagr --save-dev
+6、在工程根目录下创建ng-package.json
+{
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "index.ts"
+    }
+}
+7、在工程根目录下创建index.ts
+export * from './src/app/testmodel/testmodel.module';
+8、修改package.json
+"scripts": {
+	"ng": "ng",
+	"start": "ng serve",
+	"build": "ng build",
+	"test": "ng test",
+	"lint": "ng lint",
+	"e2e": "ng e2e",
+	"packagr": "ng-packagr -p ng-package.json"     //新添加的
+},
+"private": false,                       //修改为false
+9、删除package.json文件中dependencies对象
+10、执行打包
+npm run packagr
+11、发布npm包
+npm login   //登录账号密码等
+cd dist  进入dist目录  npm publish
+12、如果已经发布到npm，安装包就可以，以前为安装后的引用；在app.module.ts引入包
+import {TestmodelModule} from 'testpackage';
+imports: [
+    TestmodelModule  //添加
+],
+界面使用：<app-testcomponent></app-testcomponent>
