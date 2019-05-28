@@ -2,7 +2,7 @@
 
 airubby-ui是自己工作中开发的一些组件库.
 
-### 使用方法
+## 使用方法
 
 1、Run`npm install airubby-ui --save`
 
@@ -14,6 +14,8 @@ imports: [
 ],
 </pre>
 
+## 组件库
+
 + 组件说明
-	+ [进度组件](https://github.com/Airubby/airubby-ui/doc/progress)
-	+ [栅格化组件](https://github.com/Airubby/airubby-ui/doc/gutter)
+	+ [进度组件](https://github.com/Airubby/airubby-ui/tree/master/doc/progress)
+	+ [栅格化组件](https://github.com/Airubby/airubby-ui/tree/master/doc/gutter)
