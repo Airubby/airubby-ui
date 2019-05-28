@@ -1,4 +1,4 @@
-<div class="airubby-progress" [ngStyle]="{'background':backBg,'min-width':'50px','min-height':'11px'}">
-  <div class="airubby-progress-con" 
-  [ngStyle]="{'width': value+'%','min-height':'11px','background':type=='zebra'?'linear-gradient(to right,'+frontBg+' 50%, transparent 0%)':frontBg,'background-size': '4px 100%'}"></div>
+<div class="airubby-progress" [style]="outStyle">
+  <div class="airubby-progress-con" [style]="innerStyle">
+  </div>
 </div>

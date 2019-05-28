@@ -4,6 +4,10 @@ ng new testpackage
 ng g m testmodel
 3、在模块里创建组件 testcomponent为自己的组件名称，自己可以制作多个组件
 ng g c testmodel/testcomponent
+修改组件名前缀
+@Component({
+  selector: 't-testcomponent',
+})
 4、在testmodel.module.ts里面添加exports内容
 @NgModule({
   declarations: [TestcomponentComponent],
@@ -41,9 +45,9 @@ npm run packagr
 11、发布npm包
 npm login   //登录账号密码等
 cd dist  进入dist目录  npm publish
-12、如果已经发布到npm，安装包就可以，以前为安装后的引用；在app.module.ts引入包
+12、如果已经发布到npm，安装包就可以，npm install testpackage --save；在app.module.ts引入包
 import {TestmodelModule} from 'testpackage';
 imports: [
     TestmodelModule  //添加
 ],
-界面使用：<app-testcomponent></app-testcomponent>
+界面使用：<t-testcomponent></t-testcomponent>
